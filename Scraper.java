@@ -1,3 +1,6 @@
+/*
+ * @author Tim Mendez
+ */
 import java.net.URL;
 import java.net.MalformedURLException;
 import javax.mail.Session;
