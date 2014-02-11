@@ -33,17 +33,16 @@ public class CapitalOneChallenge
 
       try {
          //Though in reality, all three parameters will be prompted for due to security risks of hardcoding in a DB URL and user credentials
-         cnc = DriverManager.getConnection("jdbc:mysql://", "username", "password");
+         cnc = DriverManager.getConnection("jdbc:mysql://", "USERNAME", "PASSWORD");
  
          createDatabase(cnc);
          fillData(cnc);
          determineThings(cnc);
+
+         cnc.close();
       }
       catch(Exception e) {
          System.out.println(e.getMessage());
-      }
-      finally {
-         closeEm(cnc);
       }
    }
 
@@ -78,12 +77,11 @@ public class CapitalOneChallenge
          for(int i = 1; rst.next(); i++)
             System.out.println(i + ". " + rst.getNString(1));
 
+         rst.close();
+         stm.close();
       }
       catch(SQLException e) {
          System.out.println(e.getMessage());
-      }
-      finally {
-         closeEm(rst, stm);
       }
    }
 
@@ -105,12 +103,11 @@ public class CapitalOneChallenge
          stm.execute(createDB2);
          stm.execute(createDB3);
          stm.execute(createTBL);
+
+         stm.close();
       }
       catch(SQLException e) {
          System.out.println(e.getMessage());
-      }
-      finally {
-         closeEm(stm);
       }
    }
 
@@ -140,34 +137,14 @@ public class CapitalOneChallenge
          ins = ins.substring(0, ins.length() - 1);
          ins += ";";
          stm.execute(ins);
+
+         stm.close();
       }
       catch(SQLException e) {
          System.out.println(e.getMessage());
       }
       catch(FileNotFoundException e) {
          System.out.println("File not found. Make sure 'Metropolitan_Populations__2010-2012_.csv' is in the root directory");
-      }
-      finally {
-         closeEm(stm);
-      }
-   }
-
-  /* closeEm safely closes all statements
-   *
-   * (c) Clinton Staley
-   * clintstaley@gmail.com
-   * Used with written permission
-   **/
-   static void closeEm(Object... toClose) {
-      for (Object obj: toClose) {
-         if (obj != null) {
-            try {
-               obj.getClass().getMethod("close").invoke(obj);
-            }
-            catch (Throwable t) {
-               System.out.println("Log bad close");
-            }
-         }
       }
    }
 }
