@@ -1,0 +1,7 @@
+javac SquareDetector.java
+echo Test1
+java SquareDetector <test1.in
+echo Test2
+java SquareDetector <test2.in
+echo Test3
+java SquareDetector <test3.in

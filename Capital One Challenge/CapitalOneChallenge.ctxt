@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=cnc
+comment1.target=void\ determineThings(java.sql.Connection)
+comment1.text=\ Takes\ in\ a\ connection.\r\n\ Executes\ 3\ separate\ queries\ and\ prints\ results\ of\ each.\r\n
+comment2.params=cnc
+comment2.target=void\ createDatabase(java.sql.Connection)
+comment2.text=\ Takes\ in\ a\ connection.\r\n\ Creates\ a\ new\ database\ MetroPopulations\ and\ a\ new\ relation\ MetroData.\r\n\ MetroData\ has\ 5\ attributes\ -\ City,\ State,\ 2010\ Population,\ 2011\ Population,\ 2012\ Population.\r\n\ MetroData's\ primary\ key\ is\ (City,\ State).\r\n
+comment3.params=cnc
+comment3.target=void\ fillData(java.sql.Connection)
+comment3.text=\ Takes\ in\ a\ connection.\r\n\ Scans\ in\ the\ data.\r\n\ Inserts\ all\ of\ the\ data\ at\ once\ into\ the\ MetroData\ relation\ in\ the\ MetroPopulations\ database.\r\n
+comment4.params=toClose
+comment4.target=void\ closeEm(java.lang.Object[])
+comment4.text=\ closeEm\ safely\ closes\ all\ statements\r\n\r\n\ (c)\ Clinton\ Staley\r\n\ clintstaley@gmail.com\r\n\ Used\ with\ written\ permission\r\n
+numComments=5
