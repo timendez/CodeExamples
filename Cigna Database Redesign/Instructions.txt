@@ -1,0 +1,14 @@
+How wold you revamp our database architecture?
+
+Cigna
+
+We are revamping our entire database architecture and we'd like your help! We are an insurance provider, and we deal primarily with 3 sets of users: Hospitals, Doctors and Policyholders.
+
+
+Deliverables
+
+Keeping in mind that this application will be written in C#, please write up a design document based on object oriented design principles that will allow us to keep track of Hospitals, Doctors and Policyholders.
+
+Think carefully about how you will structure these classes. Provide at least 3 methods or attributes per class, and make sure you are using inheritance as needed.
+
+Also include a description of how your classes relate to one another (e.g. "Each Hospital has many Doctors" and "Each Policyholder has one Hospital"). Please make sure to discuss your reasoning in making these design decisions.
